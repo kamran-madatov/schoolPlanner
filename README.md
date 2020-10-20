@@ -26,10 +26,10 @@ Front Page Empty
 ![alt text](/EmptyPage.png)
 
 Front Page
-![alt text](/frontPage.png)
+![alt text](/FrontPage.png)
 
 Update Page
-![alt text](/updatePage.png)
+![alt text](/UpdatePage.png)
 
 ## Contributing
 Kamran Madatov
