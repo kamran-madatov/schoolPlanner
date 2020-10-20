@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Planner</title>
+{% endblock %}
+
+{% block body %}
+<div course="course">
+    <h1 style="text-align: center">School Planner</h1>
+    {% if assignments|length < 1 %}
+    <h4 style="text-align: center">There are no assignments. Add one below!</h4>
+    {% else %}
+    <table>
+        <tr>
+            <th>course</th>
+            <th>Assignment</th>
+            <th>Due Date</th>
+            <th>Added</th>
+            <th>Actions</th>
+        </tr>
+        {% for assignment in assignments %}
+            <tr>
+                <td>{{ assignment.course }}</td>
+                <td>{{ assignment.task }}</td>
+                <td>{{ assignment.due }}</td>
+                <td>{{ assignment.date_created.date() }}</td>
+                <td>
+                    <a href="/delete/{{assignment.id}}">Delete</a>
+                    <br>
+                    <a href="/update/{{assignment.id}}">Update</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table><br>
+    {% endif %}
+
+    <div course="form">
+        <form action="/" method="POST">
+            <label for="course">Course:</label>
+            <input type="text" name="course" id="course">
+            <label for="task">Assignment:</label>
+            <input type="text" name="task" id="task">
+            <label for="due">Due Date:</label>
+            <input type="date" id="due" name="due">
+            <input type="submit" value="Add assignment">
+        </form>
+    </div>
+</div>
+{% endblock %}

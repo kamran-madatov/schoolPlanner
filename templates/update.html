@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Assignment assignment Master</title>
+{% endblock %}
+
+{% block body %}
+<div course="course">
+    <h1 style="text-align: center">Update assignment</h1>
+
+    <div course="form">
+        <form action="/update/{{assignment.id}}" method="POST">
+            <input type="text" name="course" id="course" value="{{assignment.course}}">
+            <input type="text" name="task" id="task" value="{{assignment.task}}">
+            <input type="date" name="due" id="due" value="{{assignment.due}}">
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</div>
+{% endblock %}
